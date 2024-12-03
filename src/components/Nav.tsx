@@ -24,7 +24,7 @@ const navLinks = [
     title: "Contact",
     href: "/contact",
   }
-]
+];
 
 type Nav = {
   className?: string;
