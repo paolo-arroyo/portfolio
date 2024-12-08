@@ -14,7 +14,11 @@ const Header = ({ className }: HeaderProps) => {
 
         {/* Site Logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">Paolo<span className="text-accent">.</span></h1>
+          <h1 className="text-4xl font-semibold tracking-wider text-accent">
+            &lt;
+            <span className="text-white">Paolo</span>
+            /&gt;
+          </h1>
         </Link>
 
         {/* Desktop Navigation */}
