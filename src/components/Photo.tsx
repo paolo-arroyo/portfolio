@@ -35,7 +35,7 @@ const Photo = () => {
             priority
             quality={100}
             fill
-            className="object-contain rounded-full p-8"
+            className="object-contain rounded-full"
           />
         </motion.div>
         <motion.svg

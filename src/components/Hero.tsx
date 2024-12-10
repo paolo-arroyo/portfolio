@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="flex flex-col xl:flex-row items-center justify-between gap-6 xl:pt-8 xl:pb-24">
       <div className="text-center xl:text-left flex flex-col gap-4 order-2 xl:order-1">
         <h3>Hi! I&apos;m <span className="text-accent"> Paolo Arroyo</span>, & </h3>
-        <h1>I build <span className="text-accent">websites</span></h1>
+        <h1 className="text-6xl after:whitespace-nowrap tracking-tighter">I build <span className="text-accent">websites</span></h1>
         <p className="max-w-[600px] mb-9 text-white/80">
           I&apos;m a web developer based in the Philippines. I specialize in building e-commerce websites and web applications using modern technologies like <span className="text-[#00d8ff] font-semibold">React</span>, <span className="font-semibold text-[#FECC1B]">Remix</span>, <span className="font-semibold text-[#F77BF6]">Next.js</span> and <span className="font-semibold text-[#96bf48]">Shopify Liquid/Hydrogen</span>.
         </p>
