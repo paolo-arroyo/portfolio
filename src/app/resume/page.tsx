@@ -236,7 +236,7 @@ const Resume = () => {
                   {skills.items.map((item, index) => {
                     return (
                       <li key={index} className="flex justify-center lg:justify-start">
-                        <TooltipProvider>
+                        <TooltipProvider delayDuration={0}>
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                               <div className="text-5xl xl:text-6xl flex flex-row items-center justify-center group-hover:text-accent transition-all duration-300">
