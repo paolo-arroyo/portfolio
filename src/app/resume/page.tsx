@@ -165,7 +165,7 @@ const Resume = () => {
         opacity: 1,
         transition: {
           duration: 0.4,
-          delay: 2.4,
+          delay: 0.8,
           ease: "easeIn",
         },
       }}
