@@ -8,6 +8,8 @@ import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
 import { BsArrowRight, BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
+import ProjectStack from '@/components/ProjectStack';
+import SliderButtons from '@/components/SliderButtons';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Image from 'next/image';
@@ -20,16 +22,40 @@ const projects = [
     category: ['E-Commerce', 'Fullstack', 'Team'],
     image: '/assets/project-novita.jpg',
     href: 'https://novita.com',
-    stack: ['remix', 'react', 'shopify', 'hydrogen', 'typescript', 'tailwind', 'sanity'],
+    stack: ['hydrogen', 'remix', 'react', 'typescript', 'tailwind', 'sanity', 'html', 'css'],
   },
   {
     title: 'Origin USA',
     description: 'Origin USA is a premier manufacturer of American-made fitness equipment. I worked with their in-house development team develop new features for their Shopify store, including a redesign of the produt and collection pages. I also helped optimize their site for performance and SEO.',
     category: ['E-Commerce', 'Fullstack'],
-    image: '/assets/portfolio.png',
-    href: 'https://novita.com',
+    image: '/assets/project-novita.png',
+    href: 'https://originusa.com',
     stack: ['react', 'shopify', 'javascript', 'tailwind'],
   },
+  {
+    title: 'Lintbells Veterinary',
+    description: 'Origin USA is a premier manufacturer of American-made fitness equipment. I worked with their in-house development team develop new features for their Shopify store, including a redesign of the produt and collection pages. I also helped optimize their site for performance and SEO.',
+    category: ['E-Commerce', 'Fullstack'],
+    image: '/assets/project-novita.png',
+    href: 'https://originusa.com',
+    stack: ['shopify', 'typescript', 'tailwind', 'googleanalytics', 'html', 'css'],
+  },
+  {
+    title: 'Honest Paws',
+    description: 'Origin USA is a premier manufacturer of American-made fitness equipment. I worked with their in-house development team develop new features for their Shopify store, including a redesign of the produt and collection pages. I also helped optimize their site for performance and SEO.',
+    category: ['E-Commerce', 'Frontend'],
+    image: '/assets/project-novita.png',
+    href: 'https://originusa.com',
+    stack: ['react', 'shopify', 'javascript', 'tailwind'],
+  },
+  {
+    title: 'Marimekko',
+    description: 'Origin USA is a premier manufacturer of American-made fitness equipment. I worked with their in-house development team develop new features for their Shopify store, including a redesign of the produt and collection pages. I also helped optimize their site for performance and SEO.',
+    category: ['E-Commerce', 'Fullstack'],
+    image: '',
+    href: 'https://originusa.com',
+    stack: ['next', 'contentful', 'typescript', 'tailwind', 'sanity', 'html', 'css'],
+  }
 ];
 
 const Work = () => {
@@ -42,7 +68,12 @@ const Work = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ 
+        opacity: 1,
+        transition: {
+          delay: 0.8, duration: 0.4, ease: 'easeIn',
+        },
+      }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
@@ -60,24 +91,11 @@ const Work = () => {
                 {activeProject.title} 
               </h2>
             </Link>
-            <p className="text-white/80">
+            <p className="text-white/80 text-base">
               {activeProject.description}
             </p>
-            <div className="flex flex-row gap-4">
-              {activeProject.stack.map((stack, index) => {
-                return (
-                  <TooltipProvider key={index}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <div className="">
-                          {stack}
-                        </div>
-                      </TooltipTrigger>
-                    </Tooltip>
-                  </TooltipProvider>
-                )
-              })}
-            </div>
+            <ProjectStack stack={activeProject.stack} />
+            <div className="border border-white/20 w-full" />
             <Link href={activeProject.href}>
               <Button className="text-sm">
                 <span>Visit Site</span>
@@ -86,7 +104,35 @@ const Work = () => {
             </Link>
           </div>
           <div className="w-full xl:w-1/2">
-              
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              className="mb-12 xl:h-[520px]"
+              onSlideChange={handleSlideChange}
+            >
+              {projects.map((project, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={project.image}
+                          fill
+                          className="object-cover"
+                          alt={project.title} 
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+              <SliderButtons
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] xl:bottom-0 z-20 w-full xl:justify-none xl:w-max justify-between xl:justify-none gap-4"
+                iconStyles=""
+                buttonStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] rounded-sm flex justify-center items-center transition-all"
+              />
+            </Swiper>
           </div>
         </div>
       </div>
