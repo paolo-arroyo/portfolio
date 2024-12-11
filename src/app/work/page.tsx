@@ -6,23 +6,29 @@ import React, { useState } from 'react';
 import "swiper/css";
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
-import { FaTrophy } from 'react-icons/fa';
+import { BsArrowRight } from 'react-icons/bs';
 
-import { BsArrowRight, BsArrowUpRight, BsGithub } from 'react-icons/bs';
-
-import ProjectCategory from '@/components/ProjectCategory';
+import ProjectCategory, { type Category } from '@/components/ProjectCategory';
 import ProjectStack from '@/components/ProjectStack';
 import SliderButtons from '@/components/SliderButtons';
 import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  categories: Category[];
+  image: string;
+  href: string;
+  stack: string[];
+};
+
+const projects: Project[] = [
   {
     title: 'Novita Knits',
     description: 'Novita Knits is the largest knitting supplier in Western Europe. Alongside e-commerce consultants and their in-house development team, I helped build a new e-commerce solution for their online store using a cutting-edge approach with Shopify Hydrogen and Sanity CMS. Novita won the Grand One Finland Award for Best in User Experience, Best Technical Implementation, and three other categories.',
-    category: ['ecommerce', 'fullstack', 'awardee'],
+    categories: ['ecommerce', 'fullstack', 'awardee'],
     image: '/assets/project-novita.jpg',
     href: 'https://novita.com',
     stack: ['hydrogen', 'remix', 'react', 'typescript', 'tailwind', 'sanity', 'html', 'css'],
@@ -30,7 +36,7 @@ const projects = [
   {
     title: 'Origin USA',
     description: 'Origin USA is a premier manufacturer of American-made fitness equipment. I worked with their in-house development team develop new features for their Shopify store. I also helped optimize their site for performance and SEO.',
-    category: ['ecommerce', 'fullstack'],
+    categories: ['ecommerce', 'fullstack'],
     image: '/assets/project-novita.png',
     href: 'https://originusa.com',
     stack: ['react', 'shopify', 'javascript', 'tailwind'],
@@ -38,7 +44,7 @@ const projects = [
   {
     title: 'Lintbells Veterinary',
     description: 'Lintbells Veterinary is a leading pet supplement brand in the UK. I worked with their in-house development team to build a new Shopify store with analytics and tracking features.',
-    category: ['ecommerce', 'fullstack'],
+    categories: ['ecommerce', 'fullstack'],
     image: '/assets/project-novita.png',
     href: 'https://originusa.com',
     stack: ['shopify', 'typescript', 'tailwind', 'googleanalytics', 'html', 'css'],
@@ -46,7 +52,7 @@ const projects = [
   {
     title: 'Honest Paws',
     description: 'As Senior Engineer at One Pet, I helped build and optimize the Honest Paws e-commerce store on Shopify, including bespoke product page and subscription features that improved conversion rates by approximately 40%.',
-    category: ['ecommerce', 'frontend'],
+    categories: ['ecommerce', 'frontend'],
     image: '/assets/project-novita.png',
     href: 'https://originusa.com',
     stack: ['react', 'shopify', 'javascript', 'tailwind'],
@@ -54,7 +60,7 @@ const projects = [
   {
     title: 'Marimekko',
     description: 'I was part of the multinational team that helped Marimekko, a Finnish design house and international lifestyle brand, integrate their e-commerce systems following MACH architecture principles.',
-    category: ['mach', 'ecommerce', 'fullstack'],
+    categories: ['mach', 'ecommerce', 'fullstack'],
     image: '',
     href: 'https://originusa.com',
     stack: ['next', 'contentful', 'typescript', 'tailwind', 'sanity', 'html', 'css'],
@@ -82,7 +88,7 @@ const Work = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-1/2 xl:h-[460px] flex flex-col xl:justify-start gap-6 order-2 xl:order-none">
-            <ProjectCategory categories={activeProject.category} />
+            <ProjectCategory categories={activeProject.categories} />
             <Link href={activeProject.href}>
               <h2 className="text-4xl font-bold hover:text-accent transition-all duration-300">
                 {activeProject.title} 

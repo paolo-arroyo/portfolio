@@ -19,7 +19,7 @@ const projectCategory = {
   },
   frontend: {
     name: 'Frontend',
-    icon: <RiStackFill />
+    icon: <FiLayout />
   },
   mach: {
     name: 'MACH Architecture',
@@ -27,8 +27,10 @@ const projectCategory = {
   },
 };
 
+export type Category = keyof typeof projectCategory;
+
 type ProjectCategoryProps = {
-  categories?: ["ecommerce" | "fullstack" | "awardee" | "frontend" | "mach"];
+  categories: Category[];
 }
 
 const ProjectCategory = ({ categories }: ProjectCategoryProps) => {
