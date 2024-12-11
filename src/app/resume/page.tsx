@@ -198,7 +198,7 @@ const Resume = () => {
                 </ul>
                 <Socials
                   containerStyles="flex flex-row w-full py-4 justify-start gap-6 items-center"
-                  iconStyles="text-3xl text-white hover:text-accent"
+                  iconStyles="text-3xl"
                 />
               </div>
             </TabsContent>

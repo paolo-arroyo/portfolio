@@ -2,14 +2,14 @@
 
 import { default as Services } from "@/components/Services";
 import { BsGlobe2, BsShop, } from "react-icons/bs";
-import { MdOutlineDesignServices } from "react-icons/md";
+import { IoMdAnalytics } from "react-icons/io";
 import { PiRankingFill } from "react-icons/pi";
 
 const services = [
   {
     icon: <BsGlobe2 />,
     title: 'Web Development',
-    description: 'I build websites and web applications that are fast, secure, and responsive.',
+    description: 'I build websites, landing pages, and web applications that are fast, secure, and responsive.',
     href: '/services/web-development',
   },
   {
@@ -19,9 +19,9 @@ const services = [
     href: '/services/web-development',
   },
   {
-    icon: <MdOutlineDesignServices />,
-    title: 'UI/UX Design',
-    description: 'I design user interfaces and experiences that are intuitive and visually appealing.',
+    icon: <IoMdAnalytics />,
+    title: 'Data & Analytics',
+    description: 'I equip websites with analytics tools to track user behavior and improve sales and marketing performance.',
     href: '/services/web-design',
   },
   {
