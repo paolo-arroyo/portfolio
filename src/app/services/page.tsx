@@ -10,25 +10,25 @@ const services = [
     icon: <BsGlobe2 />,
     title: 'Web Development',
     description: 'I build websites, landing pages, and web applications that are fast, secure, and responsive.',
-    href: '/services/web-development',
+    href: '/contact?service=web-development',
   },
   {
     icon: <BsShop />,
     title: 'E-Commerce Development',
     description: 'I specialize in building e-commerce websites using Shopify and other platforms.',
-    href: '/services/web-development',
+    href: '/contact?service=ecommerce-development',
   },
   {
     icon: <IoMdAnalytics />,
     title: 'Data & Analytics',
     description: 'I equip websites with analytics tools to track user behavior and improve sales and marketing performance.',
-    href: '/services/web-design',
+    href: '/contact?service=analytics',
   },
   {
     icon: <PiRankingFill />,
     title: 'SEO Optimization',
     description: 'I optimize websites for search engines to improve their visibility and ranking.',
-    href: '/services/seo-optimization',
+    href: '/contact?service=seo',
   }
 ];
 

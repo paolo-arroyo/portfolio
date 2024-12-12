@@ -10,6 +10,7 @@ import { FaEnvelope, FaMapPin, FaPhone } from 'react-icons/fa6';
 
 import Socials from "@/components/Socials";
 import { motion } from "framer-motion";
+import { useParams, useSearchParams } from "next/navigation";
 
 const contactInfo = [
   {
@@ -31,7 +32,11 @@ const contactInfo = [
   }
 ];
 
+
 const Contact = () => {
+  const params = useSearchParams();
+  const serviceSelected = params.get("service") ?? undefined;
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -57,7 +62,7 @@ const Contact = () => {
                 <Input type="email" placeholder="Email address" />
                 <Input type="phone" placeholder="Phone number" />
               </div>
-              <Select>
+              <Select defaultValue={serviceSelected}>
                 <SelectTrigger className="w-full ">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
