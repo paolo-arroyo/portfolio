@@ -24,8 +24,8 @@ const Header = ({ className }: HeaderProps) => {
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center">
           <Nav />
-          <Link href="/resume">
-            <Button className="ml-8 text-sm">View Resume →</Button>
+          <Link href="/contact">
+            <Button className="ml-8 text-sm">Get in Touch →</Button>
           </Link>
         </div>
 

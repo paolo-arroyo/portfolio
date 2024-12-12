@@ -11,16 +11,16 @@ const navLinks = [
     href: "/",
   },
   {
-    title: "Work",
+    title: "My Work",
     href: "/work",
+  },
+  {
+    title: "Resume",
+    href: "/resume",
   },
   {
     title: "Services",
     href: "/services",
-  },
-  {
-    title: "About",
-    href: "/about",
   },
   {
     title: "Contact",

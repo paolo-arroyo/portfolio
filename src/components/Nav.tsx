@@ -20,10 +20,6 @@ const navLinks = [
     title: "Resume",
     href: "/resume",
   },
-  {
-    title: "About",
-    href: "/about",
-  }
 ];
 
 type Nav = {
