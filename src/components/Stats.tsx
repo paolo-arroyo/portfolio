@@ -4,24 +4,22 @@ import CountUp from 'react-countup';
 
 const stats = [
   {
-    name: 'Years of Experience',
-    value: 12,
+    name: 'Years of Dev Exp',
+    value: 5,
     suffix: "+"
   },
   {
-    name: 'Projects Completed',
-    value: 52,
+    name: 'Websites Built',
+    value: 62,
   },
   {
-    name: 'Revenue Generated',
-    value: 90000,
-    prefix: "$",
-    suffix: "+",
+    name: 'Technologies Mastered',
+    value: 7,
   },
   {
     name: 'Code Commits',
-    value: 5000,
-    suffix: "+"
+    value: 2.5,
+    suffix: "k+"
   }
 ]
 
@@ -33,7 +31,6 @@ const Stats = () => {
           {stats.map((stat, index) => {
             return (
               <div key={index} className="flex-1 flex items-center justify-center">
-                {stat.prefix && <span className="text-accent text-2xl font-semibold">{stat.prefix}</span>}
                 <CountUp
                   end={stat.value}
                   duration={5}
