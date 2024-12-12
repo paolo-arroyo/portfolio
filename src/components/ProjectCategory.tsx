@@ -36,7 +36,7 @@ type ProjectCategoryProps = {
 const ProjectCategory = ({ categories }: ProjectCategoryProps) => {
   if (!categories) return null;
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row gap-4 flex-wrap">
       {categories.map((category, index) => {
         return (
           <span key={index} className="text-accent text-sm font-semibold bg-accent/10 px-2 py-1 rounded-full flex flex-row items-center gap-2">
