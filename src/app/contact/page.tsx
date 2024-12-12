@@ -69,7 +69,7 @@ const Contact = () => {
       className="py-6"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[60px]">
+        <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[60px]">
           <div className="xl:h-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272C] rounded-xl">
               <h3 className="text-4xl font-medium text-accent"> Let&apos;s work together </h3>
@@ -109,8 +109,8 @@ const Contact = () => {
               })}
             </ul>
             <Socials
-              containerStyles="flex flex-row gap-8 items-center justify-center py-12 w-full px-4"
-              iconStyles="text-2xl"
+              containerStyles="flex flex-row gap-8 items-center justify-center pt-12 w-full px-8 flex-wrap"
+              iconStyles="text-4xl md:text-2xl"
             />
           </div>
         </div>
