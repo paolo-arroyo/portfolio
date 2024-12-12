@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { BsArrowDownRight, BsGlobe2 } from 'react-icons/bs';
+import { BsArrowDownRight } from 'react-icons/bs';
 
 type ServicesProps = {
   services: {

@@ -10,7 +10,8 @@ import { FaEnvelope, FaMapPin, FaPhone } from 'react-icons/fa6';
 
 import Socials from "@/components/Socials";
 import { motion } from "framer-motion";
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const contactInfo = [
   {
@@ -32,11 +33,28 @@ const contactInfo = [
   }
 ];
 
+const SelectService = () => {
+  const params = useSearchParams();
+  const service = params.get("service");
+
+  return (
+    <Select defaultValue={service ?? undefined}>
+      <SelectTrigger className="w-full ">
+        <SelectValue placeholder="Select a service" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="web-development"> Web Development </SelectItem>
+          <SelectItem value="ecommerce-development"> E-Commerce Development </SelectItem>
+          <SelectItem value="analytics"> Data & Analytics </SelectItem>
+          <SelectItem value="seo"> SEO Optimization </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  );
+};
 
 const Contact = () => {
-  const params = useSearchParams();
-  const serviceSelected = params.get("service") ?? undefined;
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -62,19 +80,10 @@ const Contact = () => {
                 <Input type="email" placeholder="Email address" />
                 <Input type="phone" placeholder="Phone number" />
               </div>
-              <Select defaultValue={serviceSelected}>
-                <SelectTrigger className="w-full ">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="web-development"> Web Development </SelectItem>
-                    <SelectItem value="ecommerce-development"> E-Commerce Development </SelectItem>
-                    <SelectItem value="analytics"> Data & Analytics </SelectItem>
-                    <SelectItem value="seo"> SEO Optimization </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <Suspense>
+                <SelectService />
+              </Suspense>
+              
               <Textarea className="h-[200px]" placeholder="Type your message here. " />
               <Button size="md" className="max-w-40"> Send Message </Button>
             </form>
