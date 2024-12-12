@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 
 const Hero = () => {
   return (
-    <div className="flex flex-col xl:flex-row items-center justify-between gap-6 xl:pt-8 xl:pb-24">
+    <div className="flex flex-col xl:flex-row items-center justify-between gap-6 pt-4 xl:pt-8 xl:pb-24">
       <div className="text-center xl:text-left flex flex-col gap-4 order-2 xl:order-1">
         <h3>Hi! I&apos;m <span className="text-accent"> Paolo Arroyo</span>, & </h3>
         <h1 className="text-6xl after:whitespace-nowrap tracking-tighter">I build <span className="text-accent">websites</span></h1>
@@ -19,7 +19,7 @@ const Hero = () => {
             size="lg"
             className="uppercase flex items-center gap-2"
           >
-            <span> Download CV </span>
+            <a href="/assets/Resume.pdf" download="Resume"> Download CV </a>
             <FiDownload className="text-xl ml-2" />
           </Button>
           <div className="mb-8 xl:mb-0">
