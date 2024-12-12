@@ -4,7 +4,7 @@ import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact, FaUserGraduate } from 'react-
 import { GiSkills } from 'react-icons/gi';
 import { MdOutlineBadge } from "react-icons/md";
 
-import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -12,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 
 import Socials from '@/components/Socials';
 import { motion } from 'framer-motion';
+import { FaShopify } from 'react-icons/fa6';
 
 // About Data
 const about = {
@@ -113,16 +114,10 @@ const skills = {
   description: 'Here are some of the technologies I have experience working with.',
   items: [
     {
-      icon: <FaHtml5 />,
-      name: 'HTML5',
-      years: 8,
-      rating: '9.5/10'
-    },
-    {
-      icon: <FaCss3 />,
-      name: 'CSS3',
-      years: 8,
-      rating: '9/10'
+      icon: <FaShopify />,
+      name: 'Shopify',
+      years: 7,
+      rating: '9/10',
     },
     {
       icon: <FaJs />,
@@ -154,6 +149,24 @@ const skills = {
       years: 5,
       rating: '9/10'
     },
+    {
+      icon: <SiTypescript />,
+      name: 'TypeScript',
+      years: 4,
+      rating: '9/10'
+    },
+    {
+      icon: <FaHtml5 />,
+      name: 'HTML5',
+      years: 8,
+      rating: '9.5/10'
+    },
+    {
+      icon: <FaCss3 />,
+      name: 'CSS3',
+      years: 8,
+      rating: '9/10'
+    },
   ]
 };
 
@@ -182,8 +195,8 @@ const Resume = () => {
           <div className="min-h-[70vh] w-full">
             <TabsContent value="about" className="w-full">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold"> {about.title} </h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold text-center xl:text-left"> {about.title} </h3>
+                <p className="max-w-[600px] text-white/60 mx-auto text-center xl:text-left xl:mx-0">
                   {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 mx-auto xl:mx-0">
