@@ -15,18 +15,21 @@ const SliderButtons = ({
   iconStyles,
 }: SliderButtonsProps) => {
   const swiper = useSwiper();
+  const activeIndex = swiper.activeIndex;
   return (
     <div>
       <div className={containerStyles}>
         <button
           onClick={() => swiper.slidePrev()}
           className={buttonStyles}
+          {...(activeIndex === 0 && { disabled: true })}
         >
           <PiCaretLeftBold className={iconStyles} />
         </button>
         <button
           onClick={() => swiper.slideNext()}
           className={buttonStyles}
+          {...(activeIndex === swiper.slides.length - 1 && { disabled: true })}
         >
           <PiCaretRightBold className={iconStyles} />
         </button>
